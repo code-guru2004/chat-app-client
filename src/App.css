@@ -1,0 +1,281 @@
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  background-color: #000000;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 450px;
+  height: 600px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.chat-header {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  scrollbar-width: none;          /* Firefox */
+  scrollbar-color: #888 transparent; /* Firefox */
+  background-color: #efeae2; /* WhatsApp-style base color */
+
+  /* SVG pattern background */
+  background-color: #330033;
+  background-color: #ffffff;
+  background-color: #ffffff;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23ffffff' stroke-width='.5' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23ffffff'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+
+  background-repeat: repeat;
+
+}
+
+/* Webkit browsers (Chrome, Edge, Safari) */
+.chat-box::-webkit-scrollbar {
+  width: 0px;                     /* Thin scrollbar width */
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background: transparent;        /* Optional: transparent track */
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #888;         /* Scroll thumb color */
+  border-radius: 0px;             /* Rounded edges */
+  border: 0px solid transparent; /* Adds space around thumb */
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.chat-message {
+  max-width: 75%;
+  padding: 0.6rem 1rem;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  word-break: break-word;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.2s ease-in;
+}
+
+/* Own message (right aligned) */
+.own-message {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  border-bottom-right-radius: 2px; /* Tail-style cut */
+}
+
+/* Others' messages (left aligned) */
+.other-message {
+  align-self: flex-start;
+  background-color: #f1f1f1;
+  color: #111;
+  border-bottom-left-radius: 2px; /* Tail-style cut */
+}
+
+/* Username above message bubble */
+.chat-username {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  opacity: 0.7;
+  user-select: none;
+}
+
+/* Message text */
+.chat-text {
+  font-size: 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Typing animation inherits bubble styling */
+.typing-message .chat-text {
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+/* Smooth appear animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.chat-form {
+  display: flex;
+  padding: 0.75rem;
+  border-top: 1px solid #ddd;
+  gap: 0.5rem;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #eeeeee;
+}
+
+.send-btn {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.send-btn:hover {
+  background-color: #0056b3;
+}
+
+.chat-message.system {
+  align-self: center;
+  background: none;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #777;
+  padding: 0.25rem;
+  border-radius: 0;
+}
+.typing-indicator {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin-top: -0.5rem;
+  align-self: flex-start;
+}
+.typing-message {
+  font-style: normal;
+  font-weight: normal;
+  color: #555;
+  font-size: 0.95rem;
+  font-style: italic;
+  user-select: none;
+}
+
+/* Dots container */
+.typing-dots {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 1rem;
+  margin-top: 2px;
+}
+
+/* Each dot */
+.typing-dots .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #777;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation-name: blink;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+/* Delay for each dot */
+.typing-dots .dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.typing-dots .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-dots .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Animation */
+@keyframes blink {
+  0%,
+  80%,
+  100% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+
+
+/* Make the app and chat-container take full screen on small devices */
+@media (max-width: 600px) {
+  .app {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+  }
+
+  .chat-container {
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat-header {
+    flex-shrink: 0;
+  }
+
+  .chat-box {
+    flex-grow: 1;
+    height: auto !important;
+    padding: 0.5rem 1rem;
+  }
+
+  .chat-form {
+    flex-shrink: 0;
+  }
+}
