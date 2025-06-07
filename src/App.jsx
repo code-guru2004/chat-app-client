@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { io } from "socket.io-client";
+import socket from "./socket";
 import "./App.css";
 
-const socket = io("http://localhost:3000");
 
 function App() {
   const [username, setUsername] = useState("");
