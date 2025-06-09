@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import socket from "./socket";
 import "./App.css";
 
-
 function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
@@ -11,17 +10,18 @@ function App() {
   const [chat, setChat] = useState([]);
   const [typingUser, setTypingUser] = useState("");
   const bottomRef = useRef(null);
+  const typingTimeoutRef = useRef(null);
 
   useEffect(() => {
     if (bottomRef.current) {
-      bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+      bottomRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [chat]); // Triggers on new message
-  
+  }, [chat]);
+
   useEffect(() => {
     socket.on("receive_message", (data) => {
       setChat((prev) => [...prev, data]);
-      setTypingUser(""); // Clear typing when message received
+      setTypingUser("");
     });
 
     socket.on("user_joined", (data) => {
@@ -35,10 +35,15 @@ function App() {
       if (user !== username) {
         setTypingUser(user);
 
-        // Clear typing indicator after 2 seconds
-        setTimeout(() => {
+        // Clear any previous timeout
+        if (typingTimeoutRef.current) {
+          clearTimeout(typingTimeoutRef.current);
+        }
+
+        // Keep typing indicator for at least 1000ms
+        typingTimeoutRef.current = setTimeout(() => {
           setTypingUser("");
-        }, 2000);
+        }, 1500);
       }
     });
 
@@ -46,6 +51,10 @@ function App() {
       socket.off("receive_message");
       socket.off("user_joined");
       socket.off("user_typing");
+
+      if (typingTimeoutRef.current) {
+        clearTimeout(typingTimeoutRef.current);
+      }
     };
   }, [username]);
 
@@ -125,7 +134,9 @@ function App() {
                   msg.user === username ? "own-message" : "other-message"
                 }`}
               >
-                <div className="chat-username">{msg.user === username? "You" :msg.user }</div>
+                <div className="chat-username">
+                  {msg.user === username ? "You" : msg.user}
+                </div>
                 <div className="chat-text">{msg.text}</div>
               </div>
             );
@@ -140,7 +151,6 @@ function App() {
             </div>
           )}
           <div ref={bottomRef} />
-
         </div>
 
         <form className="chat-form" onSubmit={sendMessage}>
